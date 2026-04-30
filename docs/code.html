@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mirador del Cauca</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dcc48e",
+                        "primary-fixed": "#c8e8d0",
+                        "surface-container-high": "#eae6de",
+                        "on-primary-fixed-variant": "#2a6038",
+                        "on-primary-fixed": "#002110",
+                        "background": "#faf6f0",
+                        "on-error": "#ffffff",
+                        "primary-container": "#78a886",
+                        "secondary-fixed": "#f0e8db",
+                        "inverse-on-surface": "#f5f0e8",
+                        "inverse-surface": "#2e3230",
+                        "on-secondary-fixed": "#1e1a13",
+                        "surface-container": "#f0ece4",
+                        "on-surface": "#2e3230",
+                        "on-secondary-container": "#5e5548",
+                        "error": "#b83230",
+                        "tertiary-container": "#c4a66a",
+                        "surface-dim": "#dbd7cf",
+                        "secondary-fixed-dim": "#d4ccbf",
+                        "outline": "#74796e",
+                        "on-surface-variant": "#4a4e4a",
+                        "surface-tint": "#4a7c59",
+                        "on-secondary-fixed-variant": "#4a4538",
+                        "on-error-container": "#690005",
+                        "on-background": "#2e3230",
+                        "inverse-primary": "#8ecf9e",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e0d8",
+                        "secondary": "#6b6358",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c4c8bc",
+                        "primary": "#4a7c59",
+                        "error-container": "#ffdad8",
+                        "surface-container-low": "#f5f1ea",
+                        "surface-container-highest": "#e4e0d8",
+                        "on-tertiary-fixed-variant": "#554020",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#f0e8db",
+                        "surface-bright": "#faf6f0",
+                        "on-tertiary-container": "#554020",
+                        "surface": "#faf6f0",
+                        "tertiary": "#705c30",
+                        "on-primary-container": "#d8f0de",
+                        "on-tertiary-fixed": "#221a05",
+                        "primary-fixed-dim": "#8ecf9e",
+                        "tertiary-fixed": "#f8e0a8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Literata", "serif"],
+                        "display": ["Literata", "serif"],
+                        "body": ["Nunito Sans", "sans-serif"],
+                        "label": ["Nunito Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #faf6f0;
+            color: #2e3230;
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline, .font-display {
+            font-family: 'Literata', serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-[#faf6f0] dark:bg-stone-950 font-['Nunito_Sans'] font-medium text-sm tracking-wide docked full-width top-0 sticky z-50 border-b border-stone-200/60 dark:border-stone-800 shadow-[0_4px_20px_rgba(46,50,48,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="font-['Literata'] text-2xl font-bold text-[#4a7c59] dark:text-emerald-500">
+                Mirador del Cauca
+            </div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-[#4a7c59] border-b-2 border-[#4a7c59] pb-1 font-bold hover:bg-stone-100/50 dark:hover:bg-stone-900 rounded-lg transition-all active:scale-95 duration-200 ease-in-out px-2" href="#">Menu</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#4a7c59] transition-colors hover:bg-stone-100/50 dark:hover:bg-stone-900 rounded-lg transition-all active:scale-95 duration-200 ease-in-out px-2 py-1" href="#">Bakery</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#4a7c59] transition-colors hover:bg-stone-100/50 dark:hover:bg-stone-900 rounded-lg transition-all active:scale-95 duration-200 ease-in-out px-2 py-1" href="#">Candy Shop</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#4a7c59] transition-colors hover:bg-stone-100/50 dark:hover:bg-stone-900 rounded-lg transition-all active:scale-95 duration-200 ease-in-out px-2 py-1" href="#">Relaxation Zone</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-medium hover:bg-surface-tint/90 transition-colors hidden md:block">
+                Book a Table
+            </button>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Landscape" class="w-full h-full object-cover" data-alt="stunning wide landscape view of a lush green mountain valley in La Pintada, Colombia, warm golden hour sunlight, river flowing through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEtJWP6kiTmCCEu4R-71IU7OzJ8CePOK4qpoLYwagxEB-wFaSdPoqFaLvCE3xtAtLXUCO6-gG7m_ka8V_ZSwLhGv_lfv5mi9sZmn7A7kruCjf2Fh87-qD-MDGbwsdn8Yy5l0hnVEnokzqv9hKJrdnE_0_6p4uoc0s_5r7-pOePLIu3YE90D5d36H_F37BM8_0g6oKyBOS9rMy7f2fZXgwmzzQj0oaHd8jWVypNbD_plz1ZhtVVMXTVQrvG5kreehHhP3Beati8XQs"/>
+<div class="absolute inset-0 bg-on-background/40"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto text-on-primary">
+<h1 class="font-headline text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+                    Rooted in Tradition
+                </h1>
+<p class="font-body text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light drop-shadow-md">
+                    A welcoming oasis for travelers exploring the beautiful landscapes of Antioquia.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-medium text-lg hover:bg-surface-tint/90 transition-colors shadow-lg">
+                        Explore Our Menu
+                    </button>
+<button class="bg-surface text-primary border border-surface-variant px-8 py-4 rounded-xl font-medium text-lg hover:bg-surface-variant transition-colors shadow-lg">
+                        Plan Your Visit
+                    </button>
+</div>
+</div>
+</section>
+<!-- Gastronomy Bento -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-bold text-primary mb-4">Authentic Flavors</h2>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mx-auto">Experience the rich culinary heritage of Antioquia with our traditional dishes, prepared fresh daily.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<div class="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group">
+<img alt="Buffet Spread" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="large spread of traditional colombian buffet food, bandeja paisa elements, rich warm lighting, rustic wooden table setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVKGkbJaqxq9Oj00or_F9QoVkNBnlTyZovsVMY-EsJvJwX1jQA8NGPRN4yxIHgLrj0JGSl9NehlsoU5Fpc8IZaR0Yz05YL2xrrdcOQxob4Nfmnzq3j40dXu1Os2xcigC8mmYQa3dhrGLOgyhJykg8ojNFE0bXiPBVuY9RXjhDRfO-waOWYrJRIC9FS1sv7XPOj1ZI8E8_CLgdaRl2lWkqMxGKPIUSYP1v9CuRpzwGIF1o0niQIJMmaXEYA2v6-wunLrkBNyyyYmEQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline text-3xl font-bold text-on-primary mb-2">Abundant Buffet</h3>
+<p class="text-on-primary/90 font-body">A hearty selection of regional favorites.</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img alt="A la carte dish" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close up of a gourmet traditional colombian dish, perfectly plated, warm restaurant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1-y0vGElRiKkU2naKwHEJ1rf4U-6pYYI7wI_TIqgX4BZFJPRmObMGyEcvCoz_Z_mZQn_1_6Pat3UmzykGTrbpntPKx6PX2jinWLuGP6e8lXqPeIAGxgEUghJyHG61oNA8MvBvZ_USQvTeD5GnDRfyQZqriNVeQT13bkZB5XR3siQB15XOr2NVL1uPpYpRX-uvVXcxW6O4aAqf3D80WrAfAHgncYJPvLJpQpPP2zXqNUyoovaxfV-2tHtNHezfyulZqcMjtZJCPeY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="font-headline text-xl font-bold text-on-primary mb-1">À La Carte</h3>
+<p class="text-on-primary/90 font-body text-sm">Crafted with local ingredients.</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group bg-surface-container-high flex flex-col items-center justify-center p-6 text-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Daily Specials</h3>
+<p class="text-on-surface-variant font-body text-sm mb-4">Discover something new every visit.</p>
+<a class="text-primary font-medium hover:text-tertiary transition-colors" href="#">View Menu →</a>
+</div>
+</div>
+</section>
+<!-- Bakery & Candy Shop -->
+<section class="py-24 bg-surface-container-low border-y border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline text-4xl font-bold text-primary mb-6">Artisanal Bakery &amp; Candy Shop</h2>
+<p class="font-body text-lg text-on-surface-variant mb-6 leading-relaxed">
+                            Treat yourself to our freshly baked breads, warm pastries, and a colorful selection of traditional local sweets. Perfect for the road ahead or a sweet pause in your journey.
+                        </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-tertiary mr-3">bakery_dining</span>
+<span>Freshly baked Pan de Queso</span>
+</li>
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-tertiary mr-3">cake</span>
+<span>Traditional Arequipe &amp; Guava pastries</span>
+</li>
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-tertiary mr-3">coffee</span>
+<span>Locally sourced Colombian Coffee</span>
+</li>
+</ul>
+<button class="bg-surface text-primary border border-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-colors">
+                            Order Sweets
+                        </button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<img alt="Fresh Bread" class="w-full h-[250px] object-cover rounded-xl shadow-sm" data-alt="close up of warm freshly baked artisan bread crust, golden brown, rustic bakery setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6oTPWvBuSGO7hsm9HfUho0PJB4-NQh3YjOryp78SNwgTW5sQDEHm2_4-JjJWJzrn1xgqS1ux8uUg7aWgYVJi7PwsnKfvosomrXMHEnSVf3RdH-auJd6XidIpfdpAaKhkgqfF-uvI8wuAm-APGWe3Fsj3IPjfED2eqF63cK5aNPHLNgIpM0yaLokoZ0NTlESduwFurSY2Iky5L9y_vbVBIxaQhpJ6s_Qy0GBhoU8QVYGqBHFHJJoykqAgO4s6mVkrIrKrfS6z-Rgc"/>
+<img alt="Traditional Sweets" class="w-full h-[250px] object-cover rounded-xl shadow-sm mt-8" data-alt="colorful traditional latin american candies and sweets in glass jars, warm inviting light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSwQPC2vp_0pB3BBsrPVCndtZuN4evG95BR27JVG5T48SfgRXIknB8zBFbnTHqUiq15odlaH1V1QvXE6iyImPB6_Vh0_UGhCyJuiNJ7joUHXIpPo2n6gxvPT7eq-Hr8elGFm7W5tXgLDwaYl2A5AI2bmq89aynRFDx6sXEOxs58aBFBfiIbWfNTroS2OAmWjJxLZrFWc6FF4IaXi_xpkvnzohwSDGtKRk-KSA5mUMy_fVKhkV306bOWBmxT8BzSBVroVOOiJ7-fHk"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Relaxation Zone -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(46,50,48,0.06)] border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-12 flex flex-col justify-center">
+<h2 class="font-headline text-3xl font-bold text-primary mb-4">Your Oasis Awaits</h2>
+<p class="font-body text-lg text-on-surface-variant mb-6">
+                             Take a well-deserved break in our dedicated relaxation zone. Enjoy the warm climate of La Pintada in comfortable seating, surrounded by natural touches and a calm atmosphere.
+                         </p>
+<div class="flex items-center space-x-4">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined mr-2">park</span>
+<span>Shaded Areas</span>
+</div>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined mr-2">wifi</span>
+<span>Free Wi-Fi</span>
+</div>
+</div>
+</div>
+<div class="relative h-64 md:h-auto">
+<img alt="Relaxation Area" class="absolute inset-0 w-full h-full object-cover" data-alt="comfortable outdoor patio seating area with lush green plants, warm sunny afternoon light, relaxing atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk0QfQWHrWz6i47KiE8niC7BTTjhaIZPcFsGRlPgqP3TmSHo6fNBndJ43AI5dNPqv2uNe7hZq8k2f8ngZOIO-tCjZpBpF1C5i4Nl7ZmOjkp_5KuuQyrGbommYiCOBsO5jjtDSvagN0UfZOCdELb10Ek9fXhRi0vxOMmNaXpLjaRFq-o746XXzpy13p-UpGSE2j-e-OLgAbEWLtmKiRmbDVL1npJBFF8raftEHId6sWSx45skKa7O71f9vOtibQy5TzaJMRK_BjK6A"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Hours -->
+<section class="py-24 bg-surface-container-high border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h2 class="font-headline text-4xl font-bold text-primary mb-6">Find Us</h2>
+<p class="font-body text-lg text-on-surface-variant mb-8">
+                            Conveniently located on the route to La Felisa, Mirador del Cauca is your perfect pitstop.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start">
+<span class="material-symbols-outlined text-tertiary mt-1 mr-4" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Address</h4>
+<p class="text-on-surface-variant">Vía La Felisa, Sector Mirador<br/>Antioquia, Colombia</p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-tertiary mt-1 mr-4" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Hours of Operation</h4>
+<p class="text-on-surface-variant">Open 24/7 for travelers<br/>Buffet: 6:00 AM - 10:00 PM</p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-tertiary mt-1 mr-4" style="font-variation-settings: 'FILL' 1;">phone</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Contact</h4>
+<p class="text-on-surface-variant">+57 300 123 4567</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[400px] bg-surface-variant rounded-xl overflow-hidden border border-outline-variant/20 relative flex items-center justify-center">
+<!-- Placeholder for Map -->
+<span class="material-symbols-outlined text-6xl text-outline/50">map</span>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-variant to-surface-dim opacity-50"></div>
+<img alt="Map location" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay" data-alt="aerial map view style rendering of a winding road through green mountains" data-location="Antioquia, Colombia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB93_McCkYUqSOtTaK2CR3THGPXiFIED_ZEAgv9H3MswEPle6sRwo-NnsgJdkYiyqY87abKQGj-6LuMFl_f1_t1KYG3S09bQaFxajHsEIPD8O64TZ9Z27c_dG5eDInpqb0PHJWUFh28EkU80f9Wf_SPV_sU6aDnWzaHQRaBQzXH37X0HN8lstSMTM-6e0053XhRnz3paCcu4gGH42nkhWXPNJyt7uhxs71vqdFC4mnR4WJpcSTttRETaS8xCd9hVcxJWmxQqY1DqpM"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-900 font-['Nunito_Sans'] text-stone-600 dark:text-stone-400 full-width bottom-0 mt-auto tonal shift with stone-100 background flat no shadows grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-8 py-12">
+<div>
+<div class="font-['Literata'] text-xl font-semibold text-[#705c30] mb-4">
+                Mirador del Cauca
+             </div>
+<p class="text-sm">A grounded, warm experience for every traveler.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-[#4a7c59] font-semibold underline underline-offset-4 decoration-[#4a7c59]/30 transition-opacity duration-300 hover:opacity-80" href="#">About Us</a>
+<a class="text-stone-500 hover:text-[#4a7c59] underline underline-offset-4 decoration-[#4a7c59]/30 transition-opacity duration-300 hover:opacity-80" href="#">Contact</a>
+<a class="text-stone-500 hover:text-[#4a7c59] underline underline-offset-4 decoration-[#4a7c59]/30 transition-opacity duration-300 hover:opacity-80" href="#">Location</a>
+<a class="text-stone-500 hover:text-[#4a7c59] underline underline-offset-4 decoration-[#4a7c59]/30 transition-opacity duration-300 hover:opacity-80" href="#">Local Partners</a>
+</div>
+<div class="flex items-end md:justify-end text-sm">
+            © 2024 Mirador del Cauca. Rooted in tradition.
+        </div>
+</footer>
+</body></html>

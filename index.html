@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Mirador del Cauca – Mucho más que un restaurante. Una parada mágica llena de sabor en La Pintada, Antioquia. Buffet típico, bar, almacén artesanal y zona de descanso."/>
+<title>Mirador del Cauca – La Pintada, Antioquia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary:    "#442D24",
+          cream:      "#E7C7AC",
+          background: "#F4F4F4",
+          amber:      "#DE8B00",
+          ink:        "#2A2E33",
+          muted:      "#7A6F69",
+        },
+        fontFamily: {
+          headline: ["Literata", "serif"],
+          body:     ["Nunito Sans", "sans-serif"],
+        },
+        borderRadius: {
+          xl:   "12px",
+          "2xl":"20px",
+          "3xl":"28px",
+        },
+        boxShadow: {
+          soft: "0 4px 20px rgba(46,50,48,0.06)",
+          card: "0 8px 32px rgba(68,45,36,0.10)",
+        }
+      }
+    }
+  }
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', sans-serif; background-color: #F4F4F4; color: #2A2E33; line-height: 1.65; }
+  h1, h2, h3, h4 { font-family: 'Literata', serif; line-height: 1.2; }
+  .material-symbols-outlined { vertical-align: middle; }
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+  /* Nav link hover underline */
+  .nav-link { position: relative; }
+  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #442D24; transition: width .25s ease; }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<!-- ───────────── NAV ───────────── -->
+<header class="bg-background sticky top-0 z-50 border-b border-black/[.06] shadow-soft">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+
+    <!-- Logo -->
+    <a href="#" class="flex-shrink-0">
+      <img src="images/logotipo-mirador-cauca.png" alt="Mirador del Cauca" class="h-12 w-auto object-contain"/>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-ink tracking-wide">
+      <a href="#restaurante" class="nav-link active hover:text-primary transition-colors">Restaurante</a>
+      <a href="#servicios"   class="nav-link hover:text-primary transition-colors">Servicios</a>
+      <a href="#atracciones" class="nav-link hover:text-primary transition-colors">Atracciones</a>
+      <a href="#almacen"     class="nav-link hover:text-primary transition-colors">Almacén</a>
+      <a href="#ubicacion"   class="nav-link hover:text-primary transition-colors">Ubicación</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="#ubicacion" class="hidden md:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors shadow-soft flex-shrink-0">
+      <span class="material-symbols-outlined text-[18px]">location_on</span>
+      Cómo Llegar
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-primary hover:bg-cream/50 transition-colors" aria-label="Menú">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-black/[.06] px-6 py-4 flex flex-col gap-3 text-sm font-semibold text-ink">
+    <a href="#restaurante" class="hover:text-primary transition-colors py-1">Restaurante</a>
+    <a href="#servicios"   class="hover:text-primary transition-colors py-1">Servicios</a>
+    <a href="#atracciones" class="hover:text-primary transition-colors py-1">Atracciones</a>
+    <a href="#almacen"     class="hover:text-primary transition-colors py-1">Almacén</a>
+    <a href="#ubicacion"   class="hover:text-primary transition-colors py-1">Ubicación</a>
+    <a href="#ubicacion"   class="mt-2 inline-flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-xl justify-center">
+      <span class="material-symbols-outlined text-[18px]">location_on</span> Cómo Llegar
+    </a>
+  </div>
+</header>
+
+<main class="flex-grow">
+
+  <!-- ───────────── HERO ───────────── -->
+  <section class="relative h-[90vh] min-h-[560px] flex items-end overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="images/sliders/slider-01.jpg"
+        alt="Interior del Mirador del Cauca, La Pintada"
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Gradient: bottom heavy so text is readable -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a100a]/85 via-[#1a100a]/30 to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16 md:pb-24 w-full">
+      <span class="inline-flex items-center gap-1.5 bg-amber/90 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-5 tracking-widest uppercase shadow-soft">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+        La Pintada, Antioquia
+      </span>
+      <h1 class="font-headline text-5xl md:text-7xl font-bold text-white mb-5 leading-tight max-w-3xl drop-shadow-lg">
+        Arraigados en<br/>la Tradición
+      </h1>
+      <p class="text-white/85 text-lg md:text-xl mb-8 max-w-xl font-body leading-relaxed">
+        Mucho más que un restaurante — una parada mágica llena de sabor en el corazón de Antioquia.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#restaurante" class="bg-primary text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-card text-sm">
+          Explorar el Menú
+        </a>
+        <a href="#servicios" class="bg-white/15 backdrop-blur-sm text-white border border-white/30 px-7 py-3.5 rounded-xl font-semibold hover:bg-white/25 transition-colors text-sm">
+          Ver Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── FRANJA SOBRE NOSOTROS ───────────── -->
+  <section class="bg-cream">
+    <div class="max-w-7xl mx-auto px-6 py-14 md:py-16 flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+      <div class="flex-1">
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mb-4">Mucho más que un restaurante</h2>
+        <p class="text-ink/80 text-base md:text-lg leading-relaxed">
+          En Mirador del Cauca ofrecemos a cada visitante una parada mágica llena de sabor, donde la tradición culinaria y la hospitalidad antioqueña se encuentran en un solo lugar. Nos hemos convertido en el refugio favorito de los viajeros que buscan sabor, frescura y un momento de descanso inolvidable.
+        </p>
+      </div>
+      <div class="flex-shrink-0 flex flex-wrap gap-6 md:gap-8">
+        <div class="text-center">
+          <p class="font-headline text-4xl font-bold text-primary">6AM</p>
+          <p class="text-sm text-muted font-body mt-1">Apertura diaria</p>
+        </div>
+        <div class="w-px bg-primary/20 hidden md:block"></div>
+        <div class="text-center">
+          <p class="font-headline text-4xl font-bold text-primary">7</p>
+          <p class="text-sm text-muted font-body mt-1">Días a la semana</p>
+        </div>
+        <div class="w-px bg-primary/20 hidden md:block"></div>
+        <div class="text-center">
+          <p class="font-headline text-4xl font-bold text-primary">+10</p>
+          <p class="text-sm text-muted font-body mt-1">Servicios en un solo lugar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── GASTRONOMÍA BENTO ───────────── -->
+  <section id="restaurante" class="py-20 md:py-28 px-6 max-w-7xl mx-auto">
+    <div class="mb-14">
+      <p class="text-amber font-semibold text-sm tracking-widest uppercase mb-2">Gastronomía</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold text-ink">Sabores Auténticos</h2>
+      <p class="text-muted text-lg mt-3 max-w-xl leading-relaxed">
+        La riqueza culinaria de Antioquia, preparada cada día con los mejores ingredientes de la región.
+      </p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-[280px] md:auto-rows-[300px]">
+
+      <!-- Card grande: Buffet -->
+      <div class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group shadow-card">
+        <img
+          src="images/restaurante.jpg"
+          alt="Salón principal del Restaurante Mirador del Cauca con mesas de madera"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a100a]/80 via-transparent to-transparent flex flex-col justify-end p-7">
+          <span class="inline-flex w-fit items-center gap-1 bg-amber text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2 tracking-wide uppercase">
+            <span class="material-symbols-outlined text-[13px]" style="font-variation-settings:'FILL' 1;">restaurant</span> Autoservicio
+          </span>
+          <h3 class="font-headline text-3xl font-bold text-white mb-1.5">Buffet Abundante</h3>
+          <p class="text-white/85 font-body text-sm leading-relaxed max-w-sm">Una amplia selección de los favoritos de la región — bandeja paisa, sancocho, fritanga y mucho más.</p>
+        </div>
+      </div>
+
+      <!-- Card: Salón à la carte -->
+      <div class="relative rounded-2xl overflow-hidden group shadow-card">
+        <img
+          src="images/sliders/slider-03.jpg"
+          alt="Salón interior con mesas y murales típicos antioqueños"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a100a]/80 to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-headline text-xl font-bold text-white mb-1">A la Carta</h3>
+          <p class="text-white/80 font-body text-sm">Platos elaborados con ingredientes locales.</p>
+        </div>
+      </div>
+
+      <!-- Card: Bar / Café -->
+      <div class="relative rounded-2xl overflow-hidden group shadow-card">
+        <img
+          src="images/cafe.jpg"
+          alt="Bar y zona de café con bartender y decoración colorida"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a100a]/80 to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-headline text-xl font-bold text-white mb-1">Bar &amp; Café</h3>
+          <p class="text-white/80 font-body text-sm">Café colombiano de origen, cócteles y bebidas.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────── SERVICIOS ───────────── -->
+  <section id="servicios" class="bg-cream py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-14">
+        <p class="text-amber font-semibold text-sm tracking-widest uppercase mb-2">Lo que encontrarás</p>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold text-ink">Servicios para el Viajero</h2>
+        <p class="text-muted text-lg mt-3 max-w-xl leading-relaxed">
+          Todo lo que necesitas para una parada perfecta, en un solo lugar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Restaurante balcón -->
+        <div class="bg-background rounded-2xl overflow-hidden shadow-soft group">
+          <div class="relative h-60 overflow-hidden">
+            <img
+              src="images/restaurante-balcon.jpg"
+              alt="Fachada colorida y balcón del Restaurante Mirador del Cauca"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+          </div>
+          <div class="p-7">
+            <div class="flex items-center gap-2 text-amber mb-3">
+              <span class="material-symbols-outlined text-[22px]" style="font-variation-settings:'FILL' 1;">deck</span>
+              <span class="text-xs font-bold tracking-widest uppercase">Restaurante</span>
+            </div>
+            <h3 class="font-headline text-2xl font-bold text-ink mb-2">Restaurante con Balcón</h3>
+            <p class="text-muted leading-relaxed text-sm">
+              Disfruta una vista espectacular desde nuestro colorido balcón mientras saboreas lo mejor de la cocina antioqueña. Una experiencia que combina gastronomía y paisaje.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mirador exterior -->
+        <div class="bg-background rounded-2xl overflow-hidden shadow-soft group">
+          <div class="relative h-60 overflow-hidden">
+            <img
+              src="images/mirador-cauca.jpg"
+              alt="Mirador exterior con corazón Mirador del Cauca y vista al río"
+              class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+          </div>
+          <div class="p-7">
+            <div class="flex items-center gap-2 text-amber mb-3">
+              <span class="material-symbols-outlined text-[22px]" style="font-variation-settings:'FILL' 1;">landscape</span>
+              <span class="text-xs font-bold tracking-widest uppercase">Zona de Descanso</span>
+            </div>
+            <h3 class="font-headline text-2xl font-bold text-ink mb-2">El Mirador del Cauca</h3>
+            <p class="text-muted leading-relaxed text-sm">
+              Tómate una foto en nuestro icónico corazón con vista al río Cauca. La parada perfecta para descansar y llevarte un recuerdo único de La Pintada.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Amenidades -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-background rounded-xl p-5 flex flex-col items-center text-center shadow-soft">
+          <span class="material-symbols-outlined text-3xl text-amber mb-2" style="font-variation-settings:'FILL' 1;">wifi</span>
+          <p class="font-semibold text-ink text-sm">Wi-Fi Gratis</p>
+        </div>
+        <div class="bg-background rounded-xl p-5 flex flex-col items-center text-center shadow-soft">
+          <span class="material-symbols-outlined text-3xl text-amber mb-2" style="font-variation-settings:'FILL' 1;">local_parking</span>
+          <p class="font-semibold text-ink text-sm">Parqueadero</p>
+        </div>
+        <div class="bg-background rounded-xl p-5 flex flex-col items-center text-center shadow-soft">
+          <span class="material-symbols-outlined text-3xl text-amber mb-2" style="font-variation-settings:'FILL' 1;">wc</span>
+          <p class="font-semibold text-ink text-sm">Baños Limpios</p>
+        </div>
+        <div class="bg-background rounded-xl p-5 flex flex-col items-center text-center shadow-soft">
+          <span class="material-symbols-outlined text-3xl text-amber mb-2" style="font-variation-settings:'FILL' 1;">park</span>
+          <p class="font-semibold text-ink text-sm">Zonas al Aire Libre</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── ATRACCIONES ───────────── -->
+  <section id="atracciones" class="py-20 md:py-28 px-6 max-w-7xl mx-auto">
+    <div class="mb-14">
+      <p class="text-amber font-semibold text-sm tracking-widest uppercase mb-2">Experiencias únicas</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold text-ink">Atracciones Turísticas</h2>
+      <p class="text-muted text-lg mt-3 max-w-xl leading-relaxed">
+        Más allá de la gastronomía, descubre las atracciones que hacen de Mirador del Cauca un destino completo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Imagen casa al revés -->
+      <div class="relative rounded-2xl overflow-hidden shadow-card group h-[420px] md:h-[520px]">
+        <img
+          src="images/casa-reves.jpg"
+          alt="La Casa al Revés, atracción turística de La Pintada en el Mirador del Cauca"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a100a]/70 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8">
+          <h3 class="font-headline text-3xl font-bold text-white mb-2">La Casa al Revés</h3>
+          <p class="text-white/80 text-sm font-body">Una atracción única donde todo está de cabeza — la experiencia más divertida e instagrameable de La Pintada.</p>
+        </div>
+      </div>
+
+      <!-- Texto descriptivo -->
+      <div class="flex flex-col gap-6">
+        <div class="bg-cream rounded-2xl p-7 shadow-soft">
+          <div class="flex items-start gap-4">
+            <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+              <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">home</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-xl font-bold text-ink mb-1.5">La Casa al Revés</h4>
+              <p class="text-muted text-sm leading-relaxed">Una arquitectura imposible que desafía la gravedad. Perfecta para fotos memorables y divertirse en familia.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-2xl p-7 shadow-soft">
+          <div class="flex items-start gap-4">
+            <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+              <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">favorite</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-xl font-bold text-ink mb-1.5">El Corazón del Cauca</h4>
+              <p class="text-muted text-sm leading-relaxed">Nuestro icónico corazón rojo con vista al puente colgante y el río Cauca. El punto fotográfico más famoso de La Pintada.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-2xl p-7 shadow-soft">
+          <div class="flex items-start gap-4">
+            <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+              <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">camera_alt</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-xl font-bold text-ink mb-1.5">Murales y Arte</h4>
+              <p class="text-muted text-sm leading-relaxed">Decoración artística y murales que cuentan la historia de Antioquia en cada rincón del lugar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── ALMACÉN ───────────── -->
+  <section id="almacen" class="bg-primary py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <p class="text-amber font-semibold text-sm tracking-widest uppercase mb-3">Artesanías &amp; Recuerdos</p>
+          <h2 class="font-headline text-4xl md:text-5xl font-bold text-white mb-5">Almacén de Souvenirs</h2>
+          <p class="text-white/80 text-lg leading-relaxed mb-8">
+            Llévate un pedazo de Antioquia. Nuestro almacén ofrece artesanías, productos típicos, sombreros vueltiaos, mantas y recuerdos únicos elaborados por artesanos locales.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-white/90">
+              <span class="material-symbols-outlined text-amber" style="font-variation-settings:'FILL' 1;">checkroom</span>
+              Sombreros y accesorios típicos colombianos
+            </li>
+            <li class="flex items-center gap-3 text-white/90">
+              <span class="material-symbols-outlined text-amber" style="font-variation-settings:'FILL' 1;">storefront</span>
+              Artesanías en cerámica y madera
+            </li>
+            <li class="flex items-center gap-3 text-white/90">
+              <span class="material-symbols-outlined text-amber" style="font-variation-settings:'FILL' 1;">local_cafe</span>
+              Café y productos gourmet de la región
+            </li>
+            <li class="flex items-center gap-3 text-white/90">
+              <span class="material-symbols-outlined text-amber" style="font-variation-settings:'FILL' 1;">card_giftcard</span>
+              Dulces y conservas artesanales
+            </li>
+          </ul>
+          <a href="#ubicacion" class="inline-flex items-center gap-2 bg-cream text-primary px-6 py-3.5 rounded-xl font-semibold text-sm hover:bg-cream/90 transition-colors shadow-soft">
+            <span class="material-symbols-outlined text-[18px]">directions</span>
+            Visítanos
+          </a>
+        </div>
+
+        <div class="relative rounded-2xl overflow-hidden shadow-card h-[440px] group">
+          <img
+            src="images/almacen-souvenirs.jpg"
+            alt="Almacén de artesanías y souvenirs del Mirador del Cauca con sombreros, cerámicas y recuerdos típicos"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── UBICACIÓN Y HORARIOS ───────────── -->
+  <section id="ubicacion" class="py-20 md:py-28 px-6 max-w-7xl mx-auto">
+    <div class="mb-14">
+      <p class="text-amber font-semibold text-sm tracking-widest uppercase mb-2">Visítanos</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold text-ink">Encuéntranos en La Pintada</h2>
+      <p class="text-muted text-lg mt-3 max-w-xl leading-relaxed">
+        Convenientemente ubicados sobre la vía Medellín–La Pintada. Tu parada perfecta en el camino.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- Info -->
+      <div class="flex flex-col gap-6">
+        <div class="bg-cream rounded-2xl p-7 shadow-soft flex items-start gap-5">
+          <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">location_on</span>
+          </div>
+          <div>
+            <h4 class="font-headline text-lg font-bold text-ink mb-1">Dirección</h4>
+            <p class="text-muted text-sm leading-relaxed">Vía La Pintada – La Felisa<br/>La Pintada, Antioquia, Colombia</p>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-2xl p-7 shadow-soft flex items-start gap-5">
+          <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">schedule</span>
+          </div>
+          <div>
+            <h4 class="font-headline text-lg font-bold text-ink mb-1">Horario de Atención</h4>
+            <p class="text-muted text-sm leading-relaxed">
+              Abierto todos los días<br/>
+              Restaurante: 6:00 AM – 10:00 PM<br/>
+              Almacén y atracciones: 7:00 AM – 9:00 PM
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-2xl p-7 shadow-soft flex items-start gap-5">
+          <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">phone</span>
+          </div>
+          <div>
+            <h4 class="font-headline text-lg font-bold text-ink mb-1">Contacto</h4>
+            <p class="text-muted text-sm">+57 300 000 0000</p>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-2xl p-7 shadow-soft flex items-start gap-5">
+          <div class="bg-primary/10 rounded-xl p-3 flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">share</span>
+          </div>
+          <div>
+            <h4 class="font-headline text-lg font-bold text-ink mb-2">Redes Sociales</h4>
+            <div class="flex gap-4">
+              <a href="#" class="text-primary font-semibold text-sm hover:text-amber transition-colors">Instagram</a>
+              <a href="#" class="text-primary font-semibold text-sm hover:text-amber transition-colors">Facebook</a>
+              <a href="#" class="text-primary font-semibold text-sm hover:text-amber transition-colors">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa placeholder / imagen del lugar -->
+      <div class="rounded-2xl overflow-hidden shadow-card h-[420px] md:h-auto relative group">
+        <img
+          src="images/mirador-cauca.jpg"
+          alt="Mirador del Cauca, La Pintada, Antioquia"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1a100a]/60 to-transparent flex items-end p-8">
+          <a
+            href="https://maps.google.com/?q=Mirador+del+Cauca+La+Pintada+Antioquia"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-white text-primary px-5 py-3 rounded-xl font-semibold text-sm hover:bg-cream transition-colors shadow-card"
+          >
+            <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">map</span>
+            Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ───────────── FOOTER ───────────── -->
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Marca -->
+    <div>
+      <img src="images/logotipo-white.svg" alt="Mirador del Cauca" class="h-12 w-auto mb-4 object-contain"/>
+      <p class="text-white/70 text-sm leading-relaxed max-w-xs">
+        Una experiencia cálida y auténtica para cada viajero. Tradición, sabor y hospitalidad antioqueña en un solo lugar.
+      </p>
+    </div>
+
+    <!-- Navegación -->
+    <div>
+      <p class="font-headline font-bold text-cream mb-4 text-lg">Navegación</p>
+      <nav class="flex flex-col gap-2.5">
+        <a href="#restaurante" class="text-white/70 hover:text-cream transition-colors text-sm">Restaurante</a>
+        <a href="#servicios"   class="text-white/70 hover:text-cream transition-colors text-sm">Servicios</a>
+        <a href="#atracciones" class="text-white/70 hover:text-cream transition-colors text-sm">Atracciones</a>
+        <a href="#almacen"     class="text-white/70 hover:text-cream transition-colors text-sm">Almacén de Souvenirs</a>
+        <a href="#ubicacion"   class="text-white/70 hover:text-cream transition-colors text-sm">Ubicación</a>
+      </nav>
+    </div>
+
+    <!-- Horarios -->
+    <div>
+      <p class="font-headline font-bold text-cream mb-4 text-lg">Horario</p>
+      <div class="text-white/70 text-sm space-y-1.5">
+        <p>Abierto todos los días</p>
+        <p>Restaurante: 6:00 AM – 10:00 PM</p>
+        <p>Almacén: 7:00 AM – 9:00 PM</p>
+        <p class="mt-3">La Pintada, Antioquia, Colombia</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/50 text-xs">
+      <p>© 2025 Mirador del Cauca. Arraigados en la tradición.</p>
+      <p>La Pintada, Antioquia, Colombia</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile menu toggle script -->
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+</script>
+
+</body>
+</html>
