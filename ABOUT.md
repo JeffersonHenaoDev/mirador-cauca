@@ -25,3 +25,10 @@ Estamos listos para recibirte todos los días de la semana con la mejor disposic
 ⏰ Horarios: Lunes a Domingo, de 5:00 a.m. a 11:00 p.m.
 .
 ¡Ven a Mirador del Cauca y descubre por qué somos la parada con más sabor en la vía!
+
+
+## Redes Sociales
+
+- **Instagram** https://www.instagram.com/mirador_del_cauca/
+- **Google** https://share.google/ftEv0dHDNEhBEFDz5
+- **Faceboook** https://www.facebook.com/p/Mirador-del-Cauca-61556642686981/
